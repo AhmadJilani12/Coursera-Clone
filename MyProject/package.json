@@ -1,21 +1,29 @@
 {
-  "name": "my-nodejs-project",
+  "name": "coursera-clone",
   "version": "1.0.0",
-  "description": "A Node.js project with organized folder structure",
+  "description": "A Coursera-like learning platform with comprehensive features",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "test": "jest",
     "lint": "eslint src/",
-    "build": "echo 'Build process here'"
+    "build": "echo 'Build process here'",
+    "client-install": "cd client && npm install",
+    "client-build": "cd client && npm run build",
+    "dev-full": "concurrently \"npm run dev\" \"cd client && npm start\""
   },
   "keywords": [
+    "coursera",
+    "learning",
+    "education",
+    "online-courses",
     "nodejs",
     "express",
-    "api"
+    "react",
+    "mongodb"
   ],
-  "author": "Your Name",
+  "author": "Ahmad Jilani",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
@@ -25,13 +33,32 @@
     "mongoose": "^8.0.3",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
-    "joi": "^17.11.0"
+    "joi": "^17.11.0",
+    "multer": "^1.4.5-lts.1",
+    "cloudinary": "^1.41.0",
+    "nodemailer": "^6.9.7",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "cookie-parser": "^1.4.6",
+    "express-session": "^1.17.3",
+    "connect-mongo": "^5.1.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "stripe": "^14.7.0",
+    "uuid": "^9.0.1",
+    "sharp": "^0.32.6",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.2",
     "jest": "^29.7.0",
     "eslint": "^8.55.0",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "concurrently": "^8.2.2"
   },
   "engines": {
     "node": ">=14.0.0"
