@@ -6,8 +6,6 @@ import { HelmetProvider } from 'react-helmet-async';
 
 // Layout Components
 import Layout from './components/layout/Layout';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
 
 // Page Components
 import Home from './pages/Home';
@@ -45,32 +43,30 @@ function App() {
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <CartProvider>
-            <Router>
-              <div className="App min-h-screen bg-gray-50">
-                <Header />
-                <Layout>
-                  <Routes>
-                    {/* Public Routes */}
-                    <Route path="/" element={<Home />} />
-                    <Route path="/courses" element={<Courses />} />
-                    <Route path="/courses/:id" element={<CourseDetail />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    
-                    {/* Protected Routes */}
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/my-courses" element={<MyCourses />} />
-                    <Route path="/wishlist" element={<Wishlist />} />
-                    <Route path="/certificates" element={<Certificates />} />
-                    <Route path="/instructor" element={<InstructorDashboard />} />
-                    <Route path="/create-course" element={<CreateCourse />} />
-                    <Route path="/edit-course/:id" element={<EditCourse />} />
-                  </Routes>
-                </Layout>
-                <Footer />
+        <Router>
+          <AuthProvider>
+            <CartProvider>
+                             <div className="App min-h-screen bg-gray-50">
+                 <Layout>
+                   <Routes>
+                     {/* Public Routes */}
+                     <Route path="/" element={<Home />} />
+                     <Route path="/courses" element={<Courses />} />
+                     <Route path="/courses/:id" element={<CourseDetail />} />
+                     <Route path="/login" element={<Login />} />
+                     <Route path="/register" element={<Register />} />
+                     
+                     {/* Protected Routes */}
+                     <Route path="/dashboard" element={<Dashboard />} />
+                     <Route path="/profile" element={<Profile />} />
+                     <Route path="/my-courses" element={<MyCourses />} />
+                     <Route path="/wishlist" element={<Wishlist />} />
+                     <Route path="/certificates" element={<Certificates />} />
+                     <Route path="/instructor" element={<InstructorDashboard />} />
+                     <Route path="/create-course" element={<CreateCourse />} />
+                     <Route path="/edit-course/:id" element={<EditCourse />} />
+                   </Routes>
+                 </Layout>
                 
                 {/* Toast Notifications */}
                 <Toaster
@@ -98,9 +94,9 @@ function App() {
                   }}
                 />
               </div>
-            </Router>
-          </CartProvider>
-        </AuthProvider>
+            </CartProvider>
+          </AuthProvider>
+        </Router>
       </QueryClientProvider>
     </HelmetProvider>
   );

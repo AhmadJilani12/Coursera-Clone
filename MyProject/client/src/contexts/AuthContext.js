@@ -125,7 +125,7 @@ export const AuthProvider = ({ children }) => {
     } else if (!state.token) {
       dispatch({ type: AUTH_ACTIONS.LOAD_USER_FAILURE });
     }
-  }, []);
+  }, [state.token, state.user]);
 
   // Load user function
   const loadUser = async () => {
